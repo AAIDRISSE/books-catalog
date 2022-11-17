@@ -27,6 +27,7 @@ jobs:
         pylint `ls -R | grep .py$ | xargs`
   
   build-docker:
+    needs: code-analysis
     runs-on: ubuntu-latest
     env:
       MICRO_SERVICE_VERSION: "3.0"
